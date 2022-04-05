@@ -1,6 +1,7 @@
 package es.juanjesusmunozperez.listamusica;
 
 import java.io.File;
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.xml.bind.JAXBContext;
@@ -30,6 +31,12 @@ public class UtilXML {
             } catch (JAXBException ex) {
                 System.out.println("Se ha producido un error");
                 ex.printStackTrace();
+                
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error al guardar los ficheros XML");
+                alert.setContentText("Se ha producido un error al guardar el fichero XML");
+                alert.showAndWait();
+                
             }
     }
             
@@ -43,14 +50,20 @@ public class UtilXML {
                 JAXBContext context = JAXBContext.newInstance(Canciones.class );
                 Unmarshaller unmarshaller = context.createUnmarshaller();
                 Canciones cancion = (Canciones)unmarshaller.unmarshal(fileListaCancion);
-//                System.out.println(cancion.getTitulo());
-//            System.out.println(cancion.getPaginas());
+                //System.out.println(cancion.getTitulo());
+               //System.out.println(cancion.getPaginas());
 
                 return cancion;
                 
             } catch (JAXBException ex) {
             // TODO Auto-generated catch block
                 ex.printStackTrace();
+                
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error al unir los ficheros XML");
+                alert.setContentText("Error en la importacion del XML");
+                alert.showAndWait();
+                
                 return null;
         }
             
