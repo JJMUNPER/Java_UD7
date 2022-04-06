@@ -28,18 +28,55 @@ public class App extends Application {
        stage.setScene(scene);
        stage.show();
        
-        Cancion cancion1 = new Cancion("Ficheros en Java", "Luisa Pérez");
-        System.out.println(cancion1.getTitulo());
-        cancion1.setTitulo("Listas en Java");
-        System.out.println(cancion1.getTitulo());
+        Cancion cancion1 = new Cancion("Rock", "Clasic");
+        //System.out.println(cancion1.getTitulo());
+        cancion1.setTitulo("Starway to Heaven");
+        cancion1.setAutor("Led Zeppelin");
+        cancion1.setDiscografica("Atlantic Records");
+        cancion1.setAlbum("Led Zeppelin IV");
+        cancion1.setPrecio(1.50F);
+        cancion1.setFechaPublicacion("08/10/1971");
         
-        Cancion cancion2 = new Cancion();
+        System.out.println(cancion1.getTitulo());
+        System.out.println(cancion1.getAutor());
+        System.out.println(cancion1.getDiscografica());
+        System.out.println(cancion1.getAlbum());
+        System.out.println(cancion1.getPrecio());
+        System.out.println(cancion1.getFechaPublicacion());
         
-        Cancion cancion3 = new Cancion("XML en Java");
-        cancion3.setTitulo("XML en Java 2");
-        cancion3.setPrecio((float)25.10);
-        cancion3.setPrecio(25.10f);
-        cancion3.setPrecio(25.10F);
+        
+        Cancion cancion2 = new Cancion("Rock", "Classic");
+        cancion2.setTitulo("Time");
+        cancion2.setAutor("Pink Floyd");
+        cancion2.setDiscografica("Capitol Records");
+        cancion2.setAlbum("The Dark Side of the Moon");
+        cancion2.setPrecio(1.78F);
+        cancion2.setFechaPublicacion("1973");
+        
+        System.out.println(cancion2.getTitulo());
+        System.out.println(cancion2.getAutor());
+        System.out.println(cancion2.getDiscografica());
+        System.out.println(cancion2.getAlbum());
+        System.out.println(cancion2.getPrecio());
+        System.out.println(cancion2.getFechaPublicacion());
+        
+        
+        Cancion cancion3 = new Cancion("Country", "Classic");
+        cancion3.setTitulo("Ring of Fire");
+        cancion3.setAutor("Johnny Cash");
+        cancion3.setDiscografica("Columbia Nashville");
+        cancion3.setAlbum("Love Is");
+        cancion3.setPrecio((float)2.10);
+        //cancion3.setPrecio(25.10f);
+        //cancion3.setPrecio(25.10F);
+        cancion3.setFechaPublicacion("1969");
+        
+        System.out.println(cancion3.getTitulo());
+        System.out.println(cancion3.getAutor());
+        System.out.println(cancion3.getDiscografica());
+        System.out.println(cancion3.getAlbum());
+        System.out.println(cancion3.getPrecio());
+        System.out.println(cancion3.getFechaPublicacion());
         
         Canciones canciones = new Canciones();
         canciones.getListaCancion().add(cancion1);
@@ -90,10 +127,10 @@ public class App extends Application {
             try {
                 label.setText("Titulo: " + canciones.getListaCancion().get(cancionActual).getTitulo());
                 label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
-                label2.setText("Codigo: " + canciones.getListaCancion().get(cancionActual).getISBN());
+                label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
             }catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Error; no existen mas XML");
+                alert.setTitle("Error; no existen mas datos");
                 alert.setContentText("Ya estas en la primera cancion");
                 alert.showAndWait();
             }
@@ -107,12 +144,12 @@ public class App extends Application {
             //areaText.setText(canciones.getListaCancion().get(cancionActual).toString());
             label.setText("Titulo: " + canciones.getListaCancion().get(cancionActual).getTitulo());
             label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
-            label2.setText("Codigo: " + canciones.getListaCancion().get(cancionActual).getISBN());
+            label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
             //label3.setText(caniones.getListaCancion().get(cancionActual).getFechaPublicacion());
 
             } catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Error; no existen mas XML");
+                alert.setTitle("Error; no existen mas datos");
                 alert.setContentText("No existen mas canciones que mirar");
                 alert.showAndWait();
             }
@@ -120,7 +157,7 @@ public class App extends Application {
         
             label.setText("Titulo: " + canciones.getListaCancion().get(cancionActual).getTitulo());
             label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
-            label2.setText("Codigo: " + canciones.getListaCancion().get(cancionActual).getISBN());
+            label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
         
         
     }

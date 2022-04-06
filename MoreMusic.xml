@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<canciones>
+    <cancion>
+        <album>Soft Airplane</album>
+        <autor>Chad VanGaalen</autor>
+        <discografica>Sonic</discografica>
+        <fechaPublicacion>2008</fechaPublicacion>
+        <precio>1.56</precio>
+        <titulo>Molten Light</titulo>
+    </cancion>
+    <cancion>
+        <album>Tundra</album>
+        <autor>The Abigails</autor>
+        <discografica>Capitol Records</discografica>
+        <fechaPublicacion>1973</fechaPublicacion>
+        <precio>1.78</precio>
+        <titulo>Its Nothing to me</titulo>
+    </cancion>
+    <cancion>
+        <album>Love Is</album>
+        <autor>Johnny Cash</autor>
+        <discografica>Columbia Nashville</discografica>
+        <fechaPublicacion>1969</fechaPublicacion>
+        <precio>2.1</precio>
+        <titulo>RING OF FIRE</titulo>
+    </cancion>
+    <cancion>
+        <album>Led Zeppelin IV</album>
+        <autor>Led Zeppelin</autor>
+        <discografica>Atlantic Records</discografica>
+        <fechaPublicacion>08/10/1971</fechaPublicacion>
+        <precio>1.5</precio>
+        <titulo>STARWAY TO HEAVEN</titulo>
+    </cancion>
+    <cancion>
+        <album>The Dark Side of the Moon</album>
+        <autor>Pink Floyd</autor>
+        <discografica>Capitol Records</discografica>
+        <fechaPublicacion>1973</fechaPublicacion>
+        <precio>1.78</precio>
+        <titulo>TIME</titulo>
+    </cancion>
+    <cancion>
+        <album>Love Is</album>
+        <autor>Johnny Cash</autor>
+        <discografica>Columbia Nashville</discografica>
+        <fechaPublicacion>1969</fechaPublicacion>
+        <precio>2.1</precio>
+        <titulo>RING OF FIRE</titulo>
+    </cancion>
+</canciones>

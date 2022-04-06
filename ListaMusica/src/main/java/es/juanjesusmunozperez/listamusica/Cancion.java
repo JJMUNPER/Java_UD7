@@ -8,7 +8,8 @@ public class Cancion {
         
     private String titulo;
     private String autor;
-    private String ISBN;
+    private String discografica;
+    private String album;
     private float precio;
     private String fechaPublicacion;
     
@@ -40,12 +41,20 @@ public class Cancion {
         this.autor = autor;
     }
     
-    public String getISBN() {
-        return ISBN;
+    public String getDiscografica() {
+        return discografica;
     }
     
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setDiscografica(String discografica) {
+        this.discografica = discografica;
+    }
+    
+    public String getAlbum(){
+        return album;
+    }
+    
+    public void setAlbum(String album){
+        this.album = album;
     }
     
     public float getPrecio() {
