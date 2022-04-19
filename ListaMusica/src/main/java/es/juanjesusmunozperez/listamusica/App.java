@@ -159,7 +159,10 @@ public class App extends Application {
             label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
             label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
         
-        
+        //Lectura de csv
+        //Guardar en csv
+        //Basicamente hacer el procesamiento de ficheros de texto, es el apartado de la moodle
+        //Añadir tambien boton de guardar
     }
 
     public static void main(String[] args) {
