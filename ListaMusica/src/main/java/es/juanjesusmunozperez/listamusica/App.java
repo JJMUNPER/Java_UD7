@@ -1,13 +1,13 @@
 package es.juanjesusmunozperez.listamusica;
 
+import java.util.Optional;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -110,6 +110,11 @@ public class App extends Application {
         
         Button buttonSelecFile = new Button ("Guardar XML");
         //buttonSelecFile.setGraphic(new ImageView(new Image("src/main/resources/save.png")));
+        buttonSelecFile.setStyle("-fx-background-color: #5dc1b9;");
+        buttonSelecFile.setMinHeight(40);
+        buttonSelecFile.setMinWidth(100);
+        buttonSelecFile.setMaxHeight(40);
+        buttonSelecFile.setMaxWidth(100);
         root.getChildren().add(buttonSelecFile);
         buttonSelecFile.setOnAction((t) ->{       
             UtilXML.guardarDatosXML(stage, canciones);
@@ -118,6 +123,11 @@ public class App extends Application {
         
         
         Button buttonSelectAbrir = new Button ("Importar XML");
+        buttonSelectAbrir.setStyle("-fx-background-color: #5dc1b9;");
+            buttonSelectAbrir.setMinHeight(40);
+            buttonSelectAbrir.setMinWidth(100);
+            buttonSelectAbrir.setMaxHeight(40);
+            buttonSelectAbrir.setMaxWidth(100);
         root.getChildren().add(buttonSelectAbrir);
         buttonSelectAbrir.setOnAction((t) ->{       
 //            
@@ -176,14 +186,39 @@ public class App extends Application {
                 label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
                 label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
             }catch (Exception ex) {
-                Alert alert = new Alert(Alert.AlertType.WARNING); //Cambiar el tipo de Alert por Information
-                alert.setTitle("Error; no existen mas datos");    //public static final Alert.AlertType.INFORMATION
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION); //Cambiar el tipo de Alert por Information
+                alert.setTitle("Error; no existen datos anteriores");    //public static final Alert.AlertType.INFORMATION
                 alert.setContentText("Ya estas en la primera cancion");
-                alert.showAndWait();
+                ButtonType buttonTypeInicio = new ButtonType("Inicio");
+                ButtonType buttonTypeCancelar = new ButtonType("Cerrar");
+                alert.getButtonTypes().setAll(buttonTypeInicio, buttonTypeCancelar);
+                Optional<ButtonType> result = alert.showAndWait();
+                //alert.showAndWait();
+                if (result.get() == buttonTypeInicio){
+                    cancionActual = 0;
+                    System.out.println("Cancion Actual" + cancionActual);
+                    label.setText("Titulo: " + canciones.getListaCancion().get(cancionActual).getTitulo());
+                    label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
+                    label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
+                }else if (result.get() == buttonTypeCancelar) {
+                    cancionActual = canciones.getListaCancion().size();
+                    System.out.println("objetoActual" + cancionActual);
+                    label.setText("Titulo: " + canciones.getListaCancion().get(cancionActual).getTitulo());
+                    label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
+                    label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
+                    
+                } else {
+                    System.exit(0);
+                }
             }
         });
         
         Button buttonSiguiente = new Button ("Siguiente");
+         buttonSiguiente.setStyle("-fx-background-color: #5dc1b9;");
+            buttonSiguiente.setMinHeight(40);
+            buttonSiguiente.setMinWidth(100);
+            buttonSiguiente.setMaxHeight(40);
+            buttonSiguiente.setMaxWidth(100);
         root.getChildren().add(buttonSiguiente);
         buttonSiguiente.setOnAction((t) ->{
             cancionActual++;
@@ -195,16 +230,54 @@ public class App extends Application {
             //label3.setText(caniones.getListaCancion().get(cancionActual).getFechaPublicacion());
 
             } catch (Exception ex) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error; no existen mas datos");
                 alert.setContentText("No existen mas canciones que mirar");
-                alert.showAndWait();
+                ButtonType buttonTypeInicio = new ButtonType("Inicio");
+                ButtonType buttonTypeCancelar = new ButtonType("Cancelar");
+                alert.getButtonTypes().setAll(buttonTypeInicio, buttonTypeCancelar);
+                Optional<ButtonType> result = alert.showAndWait();
+                //alert.showAndWait();
             }
         });
         
             label.setText("Titulo: " + canciones.getListaCancion().get(cancionActual).getTitulo());
             label1.setText("Autor: " + canciones.getListaCancion().get(cancionActual).getAutor());
             label2.setText("Discografica: " + canciones.getListaCancion().get(cancionActual).getDiscografica());
+            
+            //Interior y Labels
+            
+            VBox VBox2 = new VBox();
+            VBox2.setMinHeight(300);
+            VBox2.setMinWidth(400);
+            VBox2.setMaxHeight(300);
+            VBox2.setMaxWidth(400);
+            VBox2.setAlignment(Pos.CENTER);
+            VBox2.setSpacing(20);
+            VBox2.setStyle("-fx-background-color: #a6ebff;");
+            VBox2.setBorder(new Border(new BorderStroke(Color.valueOf("#5dc1b9"),
+            BorderStrokeStyle.DASHED,   //Tambien me sirve SOLID
+            CornerRadii.EMPTY,
+            new BorderWidths(8))));
+            VBox2.getChildren().add(label);
+            VBox2.getChildren().add(label1);
+            VBox2.getChildren().add(label2);
+            //VBox2.getChildren().add(label3);
+            //VBox2.getChildren().add(label4);
+            VBox.getChildren().add(VBox2);
+            
+            // Botones abajo
+            
+            HBox paneHBox = new HBox();
+            paneHBox.setAlignment(Pos.BOTTOM_CENTER);
+            paneHBox.getChildren().add(buttonAnterior);
+            paneHBox.getChildren().add(buttonSiguiente);
+            paneHBox.setSpacing(200);
+            paneHBox.setBorder(new Border(new BorderStroke(Color.valueOf("#5dc1b9"),
+            BorderStrokeStyle.SOLID,
+            CornerRadii.EMPTY,
+            new BorderWidths(3))));
+            VBox.getChildren().add(paneHBox);
         
         
     }
