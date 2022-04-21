@@ -30,18 +30,21 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         StackPane root = new StackPane();
-        root.setStyle("-fx-background-color: #d5ffff;"); //Cambiar el color
+        //Color de fondo del panel        
+        root.setStyle("-fx-background-color: #DCDCDC"); 
        /*HBox root = new HBox();
        root.setAlignment(Pos.CENTER);
        root.setSpacing(10);*/
        
+       //Tamaño ventana
        var scene = new Scene(root, 640, 480);
        stage.setScene(scene);
        stage.show();
        
         VBox VBox = new VBox();
         VBox.setAlignment(Pos.CENTER);
-        VBox.setBorder(new Border(new BorderStroke(Color.valueOf("#5dc1b9"),
+        //Color borde superior
+        VBox.setBorder(new Border(new BorderStroke(Color.valueOf("#808080"),
         BorderStrokeStyle.SOLID,
         CornerRadii.EMPTY,
         new BorderWidths(15))));
@@ -110,7 +113,7 @@ public class App extends Application {
         
         Button buttonSelecFile = new Button ("Guardar XML");
         //buttonSelecFile.setGraphic(new ImageView(new Image("src/main/resources/save.png")));
-        buttonSelecFile.setStyle("-fx-background-color: #5dc1b9;");
+        buttonSelecFile.setStyle("-fx-background-color: #808080");
         buttonSelecFile.setMinHeight(40);
         buttonSelecFile.setMinWidth(100);
         buttonSelecFile.setMaxHeight(40);
@@ -123,7 +126,7 @@ public class App extends Application {
         
         
         Button buttonSelectAbrir = new Button ("Importar XML");
-        buttonSelectAbrir.setStyle("-fx-background-color: #5dc1b9;");
+        buttonSelectAbrir.setStyle("-fx-background-color: #808080");
             buttonSelectAbrir.setMinHeight(40);
             buttonSelectAbrir.setMinWidth(100);
             buttonSelectAbrir.setMaxHeight(40);
@@ -140,14 +143,14 @@ public class App extends Application {
 
         });
         
-         //Diseño botones/Pos
+         //Diseño botones/Posicion botones superiores
         
         HBox paneScores = new HBox();
         paneScores.setAlignment(Pos.TOP_CENTER);
         paneScores.getChildren().add(buttonSelecFile);
         paneScores.getChildren().add(buttonSelectAbrir);
         paneScores.setSpacing(200);
-         paneScores.setBorder(new Border(new BorderStroke(Color.valueOf("#5dc1b9"),
+        paneScores.setBorder(new Border(new BorderStroke(Color.valueOf("#696969"),
         BorderStrokeStyle.SOLID,
         CornerRadii.EMPTY,
         new BorderWidths(3))));
@@ -174,7 +177,7 @@ public class App extends Application {
         
         Button buttonAnterior = new Button ("Anterior");
         root.getChildren().add(buttonAnterior);
-        buttonAnterior.setStyle("-fx-background-color: #5dc1b9;");
+        buttonAnterior.setStyle("-fx-background-color: #808080");
             buttonAnterior.setMinHeight(40);
             buttonAnterior.setMinWidth(100);
             buttonAnterior.setMaxHeight(40);
@@ -214,7 +217,7 @@ public class App extends Application {
         });
         
         Button buttonSiguiente = new Button ("Siguiente");
-         buttonSiguiente.setStyle("-fx-background-color: #5dc1b9;");
+         buttonSiguiente.setStyle("-fx-background-color: #808080");
             buttonSiguiente.setMinHeight(40);
             buttonSiguiente.setMinWidth(100);
             buttonSiguiente.setMaxHeight(40);
@@ -231,7 +234,7 @@ public class App extends Application {
 
             } catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Error; no existen mas datos");
+                alert.setTitle("No existen mas datos");
                 alert.setContentText("No existen mas canciones que mirar");
                 ButtonType buttonTypeInicio = new ButtonType("Inicio");
                 ButtonType buttonTypeCancelar = new ButtonType("Cancelar");
@@ -254,8 +257,8 @@ public class App extends Application {
             VBox2.setMaxWidth(400);
             VBox2.setAlignment(Pos.CENTER);
             VBox2.setSpacing(20);
-            VBox2.setStyle("-fx-background-color: #a6ebff;");
-            VBox2.setBorder(new Border(new BorderStroke(Color.valueOf("#5dc1b9"),
+            VBox2.setStyle("-fx-background-color: #F8F8FF");
+            VBox2.setBorder(new Border(new BorderStroke(Color.valueOf("#808080"),
             BorderStrokeStyle.DASHED,   //Tambien me sirve SOLID
             CornerRadii.EMPTY,
             new BorderWidths(8))));
@@ -266,14 +269,14 @@ public class App extends Application {
             //VBox2.getChildren().add(label4);
             VBox.getChildren().add(VBox2);
             
-            // Botones abajo
+            // Botones inferiores
             
             HBox paneHBox = new HBox();
             paneHBox.setAlignment(Pos.BOTTOM_CENTER);
             paneHBox.getChildren().add(buttonAnterior);
             paneHBox.getChildren().add(buttonSiguiente);
             paneHBox.setSpacing(200);
-            paneHBox.setBorder(new Border(new BorderStroke(Color.valueOf("#5dc1b9"),
+            paneHBox.setBorder(new Border(new BorderStroke(Color.valueOf("#696969"),
             BorderStrokeStyle.SOLID,
             CornerRadii.EMPTY,
             new BorderWidths(3))));
