@@ -10,9 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-/**
- * JavaFX App
- */
+// Energy and environment; Sanitation
 public class App extends Application {
 
     @Override
