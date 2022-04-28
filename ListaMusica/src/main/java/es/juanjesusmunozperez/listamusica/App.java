@@ -258,7 +258,7 @@ public class App extends Application {
             VBox2.setAlignment(Pos.CENTER);
             VBox2.setSpacing(20);
             VBox2.setStyle("-fx-background-color: #F8F8FF");
-            VBox2.setBorder(new Border(new BorderStroke(Color.valueOf("#808080"),
+            VBox2.setBorder(new Border(new BorderStroke(Color.valueOf("#F8F8FF"),
             BorderStrokeStyle.DASHED,   //Tambien me sirve SOLID
             CornerRadii.EMPTY,
             new BorderWidths(8))));
